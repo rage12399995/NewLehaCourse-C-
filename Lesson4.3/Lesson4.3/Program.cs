@@ -9,7 +9,7 @@ static void Main(string[] args)
         Console.WriteLine(i); 
         i -= 20;        
     }
-    while (i >= -100); ;
+    while (i >= -100);
 
 }
 }
