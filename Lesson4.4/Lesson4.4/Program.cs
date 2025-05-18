@@ -1,30 +1,30 @@
 ﻿internal class Program
 {
-static void Main(string[] args)
+    static void Main(string[] args)
 {
-    Console.WriteLine("Enter a symbol from the keyboard: W, S, A, D ");
-       
-        var text = Console.ReadKey().KeyChar;
-        Console.WriteLine();
+    Console.WriteLine("Enter a symbol from the keyboard: w, s, a, b ");
+
+    var text = Console.ReadKey().KeyChar;
+    Console.WriteLine();
         
-        switch (text)
+    switch (text)
     {
-        case 'W':
-                Console.WriteLine("Enter from keyboard W");
+        case 'w':
+            Console.WriteLine("Фигура перемещена вверх");
             break;
-        case 'S':
-                Console.WriteLine("Enter from keyboard S");
-                break;
-        case 'A':
-                Console.WriteLine("Enter from keyboard A");
+        case 's':
+            Console.WriteLine("Фигура перемещена вниз");
             break;
-        case 'D':
-                Console.WriteLine("Enter from keyboard D");
-                break;
-            default:
-                Console.WriteLine("This is something else");
-                break;
+        case 'a':
+            Console.WriteLine("Фигура перемещена влево");
+            break;
+        case 'b':
+            Console.WriteLine("Фигура перемещена вправо");
+            break;
+        default:
+            Console.WriteLine("Неизвестная команда. Перемещение не выполнено.");
+            break;
     }
-        Console.ReadLine();
-    }
+    Console.ReadLine();
+    }   
 }
