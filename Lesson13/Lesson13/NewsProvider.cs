@@ -1,28 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Lesson13
+﻿namespace Lesson13
 {
     public class NewsProvider
     {
- 
-        public string News { get; set; }
-        public string Weather { get; set; }
-        public string Sport { get; set; }
-        public string Incidents { get; set; }
-        public string Humor { get; set; }
-        public object ProviderNews { get; }
-        public List<string> Recipients { get; set; }
-        public object? newsProvider { get; private set; }
+        public int WeatherPublished { get; internal set; }
 
-        public NewsProvider(string providernews)
+        public event Action<string> NewsPublished;
+        public event Action<string> WetherPublished;
+        public event Action<string> SportsPublished;
+        public event Action<string> IncidentsPublished;
+        public event Action<string> HumorPublished;
+        public void PublishNews(string news)
         {
-            ProviderNews = newsProvider;
-
-            Recipients = new List<string>();
+            NewsPublished?.Invoke(news);
         }
+        public void PublishWether(string news)
+        {
+            NewsPublished?.Invoke(news);
+        }
+        public void PublishSports(string news)
+        {
+            NewsPublished?.Invoke(news);
+        }
+        public void PublishIncidents(string news)
+        {
+            NewsPublished?.Invoke(news);
+        }
+        public void PublishHumor(string news)
+        {
+            NewsPublished?.Invoke(news);
+        }
+
+
+        //internal void PublishWeather(string v)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
+
 }
